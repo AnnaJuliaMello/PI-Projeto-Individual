@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  Login - Sétima Arte</title>
+  <title> Login - Sétima Arte</title>
   <link rel="shortcut icon" href="assets/imagens/shortcut - icon.png" type="image/x-icon">
   <script src="./js/sessao.js"></script>
   <link rel="stylesheet" href="./css/estilo.css">
@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="listar()">
   <header class="header">
 
     <div class="container">
@@ -47,7 +47,7 @@
 
 
   <div class="cadastro">
-   
+
     <div class="container">
 
       <div class="card">
@@ -55,9 +55,9 @@
 
         <div class="formulario">
           <div class="campo">
-            <span>Empresa:</span>
-            <select name="empresas" id="listaEmpresas">
-              <option selected>Selecione uma uma categoria</option>
+            <span>Categoria:</span>
+            <select name="categorias" id="listaCategoria">
+              <option selected disabled value="#">Selecione uma uma categoria</option>
             </select>
           </div>
           <div class="campo">
@@ -66,7 +66,7 @@
           </div>
           <div class="campo">
             <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            <input id="email_input" type="text" placeholder="xxx@xxx.com" />
           </div>
           <div class="campo">
             <span>Senha:</span>
@@ -82,28 +82,28 @@
           <img src="./assets/circle-loading.gif" id="loading-gif" />
         </div>
 
-      <div>
-        Já possuí uma conta? <a href="login.html">Entre aqui</a>
+        <div>
+          Já possuí uma conta? <a href="login.html">Entre aqui</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="footer">
+    <div class="footer">
 
-    <div class="text">
-     Criado e desenvolvido por Anna Julia de Mello Araujo  <br><br>
-     Meus trabalhos - <a href="https://github.com/AnnaJuliaMello">https://github.com/AnnaJuliaMello</a> <br><br>
-      Contato - email: anna.araujo@sptech.school
+      <div class="text">
+        Criado e desenvolvido por Anna Julia de Mello Araujo <br><br>
+        Meus trabalhos - <a href="https://github.com/AnnaJuliaMello">https://github.com/AnnaJuliaMello</a> <br><br>
+        Contato - email: anna.araujo@sptech.school
+      </div>
+
     </div>
-   
-  </div>
-</body>
+</body >
 
 </html>
 
 <script>
+
   function cadastrar() {
-    aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
@@ -111,47 +111,38 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var empresaVar = listaEmpresas.value
+    var categoriaVar = listaCategoria.value;
+
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      empresaVar == ""
+      categoriaVar == ""
     ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
-      finalizarAguardar();
+      alert("(Mensagem de erro para todos os campos em branco)");
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
     }
-
     // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
+    fetch("/usuario/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        empresaServer: empresaVar
+        CategoriaServer: categoriaVar
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
+        return true;
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
 
           setTimeout(() => {
             window.location = "login.html";
@@ -161,6 +152,7 @@
           finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
+          alert('Houve um erro ao tentar realizar o cadastro!');
         }
       })
       .catch(function (resposta) {
@@ -170,15 +162,14 @@
 
     return false;
   }
-
   function listar() {
-    fetch("/empresas/listar", {
+    fetch("/categoria/listar", {
       method: "GET",
     })
       .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+        resposta.json().then((categoria) => {
+          categoria.forEach((categoria) => {
+            listaCategoria.innerHTML += `<option value='${categoria.idCategoria}'>${categoria.nome}</option>`;
           });
         });
       })
@@ -190,4 +181,5 @@
   function sumirMensagem() {
     cardErro.style.display = "none";
   }
+
 </script>
