@@ -120,7 +120,7 @@
       confirmacaoSenhaVar == "" ||
       categoriaVar == ""
     ) {
-      alert("(Mensagem de erro para todos os campos em branco)");
+      alert("(Preencha todos os campos em branco)");
       return false;
     }
     // Enviando o valor da nova input
@@ -146,7 +146,7 @@
 
           setTimeout(() => {
             window.location = "login.html";
-          }, "2000");
+          }, "1000");
 
           limparFormulario();
           finalizarAguardar();
