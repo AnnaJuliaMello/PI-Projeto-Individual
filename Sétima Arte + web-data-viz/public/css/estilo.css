@@ -4,11 +4,14 @@ body {
   font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #8B0000;
 }
-.total{
+
+.total {
 
   height: 100%;
   width: 100%;
+  background-color: #ffffff;
 }
+
 .header {
   height: 80px;
   border-bottom: 5px solid #ffffff;
@@ -53,7 +56,7 @@ img {
 }
 
 .navbar {
-  width: 500px;
+  width: 800px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -93,7 +96,7 @@ img {
 
 }
 
-/* TOPICO 1 */
+/* --------------------------------------------------------------------------------------------------------------- */
 
 .topico {
 
@@ -102,170 +105,159 @@ img {
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 5px solid #ffffff;
-   border-color: #8B0000;
+
 }
 
-.bloco1 {
-  
+
+/* TOPICO 1 ---------------------------------------------------------------------------------------------------------*/
+
+.esquerda {
+  margin: 10px;
+  margin-left: 250px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 330px;
+  height: 390px;
+  background-color: #ffffff;
+  flex-direction: column;
+
+}
+
+.text {
+  margin-top: -40px;
+  color: black;
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.esquerda .paragrafo {
+  margin-left: 10px;
+
+}
+
+.foto1 img {
+
+  margin-top: 40px;
+  margin-right: 200px;
+  width: 400px;
+  height: 300px;
+  box-shadow: 0 0 80px #8B0000;
+  border-radius: 5px;
+
+}
+
+/* TOPICO 2 ---------------------------------------------------------------------------------------------------------*/
+
+.direita {
+
+  margin-top: 110px;
+  margin-left: 200px;
+  display: flex;
   align-items: center;
   width: 800px;
   height: 400px;
   background-color: #ffffff;
   flex-direction: column;
 
+
 }
 
-.bloco1 .text {
-margin-top: -50px;
-  color: black;
-  font-size: 50px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.direita .paragrafo {
+
+  margin-right: 20px;
 }
 
-.bloco1 a {
+a {
   color: rgb(0, 0, 0)
 }
 
-.bloco1 .paragrafo {
-  margin-left: 10px;
+.foto2 img {
 
+  margin-top: 40px;
+  margin-left: 200px;
+  width: 400px;
+  height: 300px;
+  box-shadow: 0 0 80px #8B0000;
+  border-radius: 5px;
+
+}
+
+/*TOPICO 3-------------------------------------------------------------------------------------------------------- */
+
+.esquerda2 {
+
+  margin: 100px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+  background-color: #ffffff;
+  flex-direction: column;
+
+
+}
+
+.bloco1 img {
+  margin-top: 70px;
+  margin-right: 100px;
+  width: 210px;
+  height: 210px;
+  box-shadow: 0 0 80px #8B0000;
+  border-radius: 5px;
 }
 
 .bloco2 img {
-  
-  margin-top: 40px;
-  margin-right: 100px;
-  width: 400px;
+  margin-top: 70px;
+  margin-right: 20px;
+  width: 210px;
+  height: 210px;
+  box-shadow: 0 0 80px #8B0000;
+  border-radius: 5px;
+
+}
+
+/* SOBRE MIM ---------------------------------------------------------------------------------------------------------------*/
+
+.foto4 img {
+  margin-top: 30px;
+  margin-left: 310px;
+  width: 300px;
   height: 300px;
+  box-shadow: 0 0 80px #8B0000;
+  border-radius: 5px;
 
 }
 
-/* TOPICO 2 */
-.bloco3 {
-  
-  margin-left: -800px;
+.direita2 {
+
+  margin-top:-40px;
+  margin-right: 60px;
   display: flex;
-  width: 800px;
+  align-items: center;
+  width: 700px;
   height: 400px;
   background-color: #ffffff;
   flex-direction: column;
-
 }
 
-.bloco3 .text {
-  color: black;
-  font-size: 50px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.bloco3 .paragrafo {
-  margin-left: 5px;
-
-}
-
-.bloco4 img {
-  margin-top: 70px;
-  margin-left: 100px;
-  width: 250px;
-  height: 250px;
-  border-radius: 20px;
-}
-
-.bloco6 img {
-  margin-top: 70px;
-  margin-right: 800px;
-  width: 250px;
-  height: 250px;
-  border-radius: 20px;
-
-}
-
-/* SOBRE NÓS */
-
-.bloco5 {
- 
-  margin-right: 90px;
-  display: flex;
-  width: 800px;
-  height: 500px;
-  background-color: #ffffff;
-  flex-direction: column;
-  
-}
-
-
-.bloco5 .text {
-  color: black;
-  font-size: 50px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.bloco5 .paragrafo {
-  margin-left: 5px;
-
-}
-.bloco8 img {
-
-  margin-top: 50px;
-  margin-right: 100px;
-  width: 400px;
-  height: 400px;
-  border-radius: 20px;
-
-}
-
-
-.index-cinema {
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-}
-
-.index-cinema1 {
-  margin-top: 5px;
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  height: 100%;
-  width: 940px;
-}
-
-.index-cinema1 .text {
-  color: black;
-  font-size: 32px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.index-cinema1 .text2 {
-  color: black;
-  font-size: 18px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.index-cinema1 .paragrafo {
-  margin-left: 5px;
-}
-
-/* FOOTER */
+/* FOOTER ---------------------------------------------------------------------------------------------------------------*/
 
 .footer {
   display: flex;
-  margin: 10px;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 50px;
   background-color: #8B0000;
-  height: 150px;
+  height: 50px;
   font-size: 20px;
- 
-
-}
-
-.footer .text {
   margin-left: 5px;
   color: #ffffff;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 15px;
 }
 
 .footer a {
@@ -273,6 +265,48 @@ margin-top: -50px;
   color: #ffffff;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+/* --------------------------------------------PÁGINA DE ERAS DE CINEMA-------------------------------------------------------------------*/
+
+.tamanha{
+
+  width: 400px;
+height: 600px;
+}
+
+.capa img {
+ 
+  display: flex;
+    margin-top: 20px;
+    margin-right: 0px;
+    height: 400px;
+    width:  200px;
+    box-shadow: 0 0 80px #8B0000;
+    border-radius: 5px;
+  
+  }
+
+  .capa2 img{
+      margin-top: 40px;
+      margin-right: 200px;
+      width: 400px;
+      height: 200px;
+      box-shadow: 0 0 80px #8B0000;
+      border-radius: 5px;
+    
+    }
+
+.text_cinema {
+      margin-top: 10px;
+      color: black;
+      font-size: 50px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+   
+    
+
+
 
 /* LOGIN */
 .login {
@@ -311,7 +345,7 @@ margin-top: -50px;
 }
 
 .formulario {
-  
+
   display: flex;
   height: 90%;
   width: 80%;
@@ -334,8 +368,9 @@ margin-top: -50px;
 .formulario a {
   color: #8B0000;
   font-size: 20px;
- 
+
 }
+
 /* CADASTRO  */
 
 .cadastro {
