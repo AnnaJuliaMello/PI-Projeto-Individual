@@ -4,7 +4,11 @@ body {
   font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #8B0000;
 }
+.total{
 
+  height: 100%;
+  width: 100%;
+}
 .header {
   height: 80px;
   border-bottom: 5px solid #ffffff;
@@ -76,7 +80,7 @@ img {
   background-size: cover;
   align-items: center;
   justify-content: center;
-  border-bottom: 5px solid #ffffff;
+  border-bottom: 5px solid #8B0000;
 
 
 }
@@ -93,15 +97,19 @@ img {
 
 .topico {
 
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 5px solid #ffffff;
-
+   border-color: #8B0000;
 }
 
 .bloco1 {
+  
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 800px;
   height: 400px;
   background-color: #ffffff;
@@ -110,6 +118,7 @@ img {
 }
 
 .bloco1 .text {
+margin-top: -50px;
   color: black;
   font-size: 50px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -120,15 +129,16 @@ img {
 }
 
 .bloco1 .paragrafo {
-  margin-left: 5px;
+  margin-left: 10px;
 
 }
 
 .bloco2 img {
   
+  margin-top: 40px;
   margin-right: 100px;
-  width: 500px;
-  height: 400px;
+  width: 400px;
+  height: 300px;
 
 }
 
@@ -248,7 +258,7 @@ img {
   background-color: #8B0000;
   height: 150px;
   font-size: 20px;
-  border-top: 5px solid #ffffff;
+ 
 
 }
 
@@ -265,7 +275,6 @@ img {
 }
 
 /* LOGIN */
-
 .login {
 
   background-image: url('../imagens/bastidores.jpg');
@@ -327,7 +336,6 @@ img {
   font-size: 20px;
  
 }
-
 /* CADASTRO  */
 
 .cadastro {
