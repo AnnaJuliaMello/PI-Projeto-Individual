@@ -268,26 +268,67 @@ a {
 
 /* --------------------------------------------PÁGINA DE ERAS DE CINEMA-------------------------------------------------------------------*/
 
-.tamanha{
+.cinema {
+  margin: 50px;
+  margin-left: 50px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  width: 450px;
+  height: 400px;
+  background-color: #ffffff;
+  flex-direction: column;
+} 
+.cinema2 {
+  margin-left: 50px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  width: 500px;
+  height: 600px;
+  background-color: #ffffff;
+  flex-direction: column;
+} 
 
-  width: 400px;
-height: 600px;
-}
-
-.capa img {
+.capa1 img {
  
   display: flex;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-right: 0px;
-    height: 400px;
+    height: 300px;
     width:  200px;
     box-shadow: 0 0 80px #8B0000;
     border-radius: 5px;
   
   }
 
-  .capa2 img{
-      margin-top: 40px;
+  .capa2 img {
+ 
+    display: flex;
+      margin-top: 90px;
+      margin-right: 0px;
+      height: 300px;
+      width:  200px;
+      box-shadow: 0 0 80px #8B0000;
+      border-radius: 5px;
+    
+    }
+  
+    .capa3 img {
+ 
+      display: flex;
+        margin-top: 180px;
+        margin-right: 0px;
+        height: 300px;
+        width:  200px;
+        box-shadow: 0 0 80px #8B0000;
+        border-radius: 5px;
+      
+      }
+
+
+  .capa4   img{
+      margin-top: 400px;
       margin-right: 200px;
       width: 400px;
       height: 200px;
