@@ -1,4 +1,4 @@
-var medidaModel = require("../models/categoriaModel");
+var medidaModel = require("../models/empresaModel");
 
 function buscarUltimasMedidas(req, res) {
 

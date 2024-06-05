@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body onload="listar()">
+<body>
   <header class="header">
 
     <div class="container">
@@ -56,8 +56,12 @@
         <div class="formulario">
           <div class="campo">
             <span>Categoria:</span>
-            <select name="categorias" id="listaCategoria">
+            <select name="categoria" id="inputCategoria">
               <option selected disabled value="#">Selecione uma uma categoria</option>
+              <option value="Diretor(a)">Diretor(a)</option>
+              <option value="Roteirista">Roteirista </option>
+              <option value="Ator/Atriz">Ator/Atriz </option>
+              <option value="Amante a cineasta">Amante a cineasta </option>
             </select>
           </div>
           <div class="campo">
@@ -107,11 +111,12 @@
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
+    var categoriaVar = inputCategoria.value;
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var categoriaVar = listaCategoria.value;
+    
 
     if (
       nomeVar == "" ||
@@ -162,21 +167,21 @@
 
     return false;
   }
-  function listar() {
+   function listar() {
     fetch("/categoria/listar", {
       method: "GET",
     })
       .then(function (resposta) {
         resposta.json().then((categoria) => {
           categoria.forEach((categoria) => {
-            listaCategoria.innerHTML += `<option value='${categoria.idCategoria}'>${categoria.nome}</option>`;
+            inputCategoria.innerHTML += `<option value='${categoria.idCategoria}'>${categoria.nome}</option>`;
           });
         });
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
       });
-  }
+   }
 
   function sumirMensagem() {
     cardErro.style.display = "none";
