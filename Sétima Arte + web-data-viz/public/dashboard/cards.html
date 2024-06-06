@@ -2,11 +2,11 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imagens/shortcut - icon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Tempo Real</title>
+    <title>Sétima Arte | Simulador</title>
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -20,13 +20,15 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: rgb(255, 255, 255);">
+
+    <center>
 
     <div class="janela">
 
         <div class="header-left dash-header">
 
-            <h1>AquaTech</h1>
+            <h1>Sétima Arte </h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -53,69 +55,106 @@
             </div>
 
         </div>
+        <div class="margem">
+            <h1 style="color: #8B0000;" >Maratona de séries </h1>
 
-        <div class="dash">
-            <div id="alerta">
-            </div>
-            <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
-                    </div>
-                </div>
-            </div>
+            Nome da série que deseja assistir: <br>
+            <input type="text" id="input_nome"> <br><br>
+            Temporada que deseja assistir: <br>
+            <input type="text" id="input_temporada"> <br><br>
+            Episódio que deseja começar assistindo: <br>
+             <input type="number" id="input_ep"> <br><br>
+            Quantidade de tempo disponível:<br>
+             <input type="number" id="input_tempo"> <br><br>
+            Unidade de tempo em:
+             <select style="border-radius: 5px; background-color: white; border-color: #000000; color:#8B0000; width: 200px; text-align: center; height: 30px;"  id="select_unidade"><br><br>
+                <option value="#" selected disabled>Selecione uma opção</option>
+                <option value="horas">Horas</option>
+                <option value="minutos">Minutos</option>
+            </select> <br><br>
 
-            <div class="cards" id="cardAquarios">
-
-            </div>
-
-        </div>
-
-    </div>
-
+            Pular abertura? <select style="border-radius: 5px; background-color: white; border-color: black; color:#8B0000; width: 200px; text-align: center; height: 30px;"  id="select_abertura">
+                <option value="#" selected disabled>Selecione uma opção</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select> <br><br>
+            Pular encerramento? <select style="border-radius: 5px; background-color: white; border-color: black; color:#8B0000; width: 200px; text-align: center; height: 30px;"  id="select_encerramento">
+                <option value="#" selected disabled>Selecione uma opção</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select> <br><br>
+            <button style="border-radius: 5px; background-color: #8B0000; border-color: #8b000000; color: white;  width: 200px; text-align: center; height: 30px;" onclick="assistir()">Assistir Episódios</button>
+            <div id="div_msg"></div>
+        </center>
 </body>
 
 <script>
+    function assistir() {
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+        div_msg.innerHTML = "";
+        var nome = input_nome.value;
+        var temporada = input_temporada.value;
+        var episodio = Number(input_ep.value);
+        var minutos = Number(input_tempo.value);
+        var unidade = select_unidade.value;
+        var pularAbertura = select_abertura.value;
+        var pularEncerramento = select_encerramento.value;
 
+        var msg = ``;
+        var tempoEp = 24;
+        var tempoEncerramento = 22;
+        var contaEp = 0;
+        var minutoEp = 0;
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
+        if (episodio >= 1 && episodio <= 1100) {
+
+            if (unidade == "horas") {
+                minutos = minutos * 60;
+            }
+
+            if (pularAbertura == "sim" || pularEncerramento == "sim") {
+                if (pularAbertura == "sim") {
+                    tempoEp = tempoEp - 2;
+                    tempoEncerramento = tempoEncerramento - 2;
+                }
+                if (pularEncerramento == "sim") {
+                    tempoEp = tempoEp - 2;
+                }
+            }
+
+            var episodios = minutos / tempoEp;
+
+            for (var index = 0; index <= episodios; index++) {
+
+                msg += `<br><br>Episódio: ${index + episodio}`;
+
+                for (minutoEp = 1; minutoEp <= tempoEp; minutoEp++) {
+
+                    msg += `<br>Minuto ${minutoEp}:`;
+
+                    if (minutoEp <= 2 && pularAbertura == "nao") {
+                        msg += ` Assistindo Abertura`;
+                    } else if (pularEncerramento == "nao" && minutoEp > tempoEncerramento) {
+                        msg += ` Assistindo Encerramento`
+                    } else {
+                        msg += ` Assistindo o Episódio`;
+                    }
+
+                    if ((index + 1) >= episodios && minutoEp == (minutos % tempoEp)) {
+                        break;
+                    }
+
+                }
+
+            }
+            div_msg.innerHTML += `<br> Foram assistidos: ${episodios.toFixed(1)} episódios`;
+            div_msg.innerHTML += `<br><br>Série:${nome}<br>Temporada:${temporada} <br>${msg}`;
+            
+
+        } else {
+            alert("O número do episódio é inválido");
+        }
+
     }
 
 </script>

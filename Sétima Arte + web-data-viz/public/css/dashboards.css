@@ -44,7 +44,7 @@ body {
 
 .dash-right .avisos .div-form textarea {
   width: 95%;
-  border: 3px solid #e6005a;
+  border: 3px solid #8B0000;
   background-color: white;
   border-radius: 5px;
 }
@@ -58,7 +58,7 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #8B0000;
   width: 120px;
 }
 
@@ -71,7 +71,7 @@ body {
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #e6005a;
+  background-color: #8B0000;
   width: 80px;
 }
 
@@ -82,7 +82,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid #8B0000;
   padding: 20px;
 }
 
@@ -167,23 +167,23 @@ body {
 }
 
 .perigo-frio {
-  background-color: #5c6bc0;
+  background-color: #000000;
 }
 
 .perigo-quente {
-  background-color: #ff7043;
+  background-color: #000000;
 }
 
 .alerta-frio {
-  background-color: #42a5f5;
+  background-color: #000000;
 }
 
 .alerta-quente {
-  background-color: #ffee58;
+  background-color: #000000;
 }
 
 .ideal {
-  background-color: #9ccc65;
+  background-color: #000000;
 }
 
 .cards {
@@ -295,11 +295,11 @@ body {
 
 .btn-pink {
   color: white;
-  background-color: #e6005a;
+  background-color: #8B0000;
 }
 
 .btn-white {
-  color: #e6005a;
+  color: #8B0000;
   background-color: white;
 
 }
@@ -350,8 +350,9 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  font-family: 'Khand';
+  border-right: 3px solid #8B0000;
+  background-color: #161618;
 }
 
 .dash-right {
@@ -367,7 +368,7 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: #8B0000;
 }
 
 .hello {
@@ -377,7 +378,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #8B0000;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -389,7 +390,7 @@ canvas {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: #8B0000;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -398,14 +399,14 @@ canvas {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid #8B0000;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #8B0000;
   padding: 0;
   margin: 0;
 }
@@ -420,11 +421,18 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #8B0000;
   color: white;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+.margem {
+height: 100%;
+width: 100%;
+  background-color: #ffff;
+  margin-left:400px;
 }
