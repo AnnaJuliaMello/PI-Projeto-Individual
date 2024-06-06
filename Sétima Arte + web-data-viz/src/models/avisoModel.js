@@ -13,7 +13,7 @@ function listar() {
             u.nome,
             u.email,
             u.senha
-        FROM Mural a
+        FROM mural a
             INNER JOIN usuario u
                 ON a.fk_usuario = u.idUsuario;
     `;
@@ -66,7 +66,7 @@ function listarPorUsuario(idUsuario) {
 function publicar(titulo, descricao, idUsuario) {
     console.log("ACESSEI O mural MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, descricao, idUsuario);
     var instrucaoSql = `
-        INSERT INTO Mural (titulo, descricao, fk_usuario) VALUES ('${titulo}', '${descricao}', ${idUsuario});
+        INSERT INTO mural (titulo, descricao, fk_usuario) VALUES ('${titulo}', '${descricao}', ${idUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
